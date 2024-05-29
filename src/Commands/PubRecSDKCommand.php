@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace ChrisReedIO\PubRecSDK\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class PubRecSDKCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-pubrec-sdk';
 
     public $description = 'My command';
 
