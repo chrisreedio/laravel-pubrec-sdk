@@ -2,8 +2,6 @@
 
 namespace ChrisReedIO\PubRecSDK\Data;
 
-use ChrisReedIO\PubRecSDK\Data\BaseData;
-
 readonly class PropertyData extends BaseData
 {
     public function __construct(
@@ -147,8 +145,7 @@ readonly class PropertyData extends BaseData
         public ?string $ownerName = null,
         public ?string $distressYN = null,
         public ?string $saleDocType = null
-    )
-    {
+    ) {
     }
 
     public static function fromArray(array $data): static

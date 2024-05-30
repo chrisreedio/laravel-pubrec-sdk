@@ -2,8 +2,6 @@
 
 namespace ChrisReedIO\PubRecSDK\Data;
 
-use ChrisReedIO\PubRecSDK\Data\BaseData;
-
 readonly class AddressData extends BaseData
 {
     public function __construct(

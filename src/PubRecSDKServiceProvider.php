@@ -2,9 +2,9 @@
 
 namespace ChrisReedIO\PubRecSDK;
 
+use ChrisReedIO\PubRecSDK\Commands\PubRecSDKCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use ChrisReedIO\PubRecSDK\Commands\PubRecSDKCommand;
 
 class PubRecSDKServiceProvider extends PackageServiceProvider
 {

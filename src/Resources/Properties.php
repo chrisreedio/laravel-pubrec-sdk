@@ -27,5 +27,4 @@ class Properties extends BaseResource
         return $response->dtoOrFail();
         // return $response->json('Data.Listing');
     }
-
 }

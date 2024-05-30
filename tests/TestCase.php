@@ -2,9 +2,9 @@
 
 namespace ChrisReedIO\PubRecSDK\Tests;
 
+use ChrisReedIO\PubRecSDK\PubRecSDKServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use ChrisReedIO\PubRecSDK\PubRecSDKServiceProvider;
 
 class TestCase extends Orchestra
 {

@@ -7,7 +7,7 @@ use ChrisReedIO\PubRecSDK\PubRecSDK;
 abstract class BaseResource
 {
     public function __construct(
-       protected readonly PubRecSDK $connector,
+        protected readonly PubRecSDK $connector,
     ) {
     }
 }

@@ -2,17 +2,11 @@
 
 namespace ChrisReedIO\PubRecSDK;
 
-use Illuminate\Support\Facades\Cache;
-use Saloon\CachePlugin\Contracts\Cacheable;
-use Saloon\CachePlugin\Contracts\Driver;
-use Saloon\CachePlugin\Drivers\LaravelCacheDriver;
-use Saloon\CachePlugin\Traits\HasCaching;
 use Saloon\Contracts\Authenticator;
 use Saloon\Http\Auth\TokenAuthenticator;
 use Saloon\Http\Connector;
-use Saloon\Http\PendingRequest;
+
 use function config;
-use function dd;
 
 class PubRecSDK extends Connector
 {
@@ -25,7 +19,7 @@ class PubRecSDK extends Connector
 
     public function resolveBaseUrl(): string
     {
-        return config('pubrec-sdk.api_url') . '/pubrec/assessor/v1/';
+        return config('pubrec-sdk.api_url').'/pubrec/assessor/v1/';
     }
 
     protected function defaultHeaders(): array

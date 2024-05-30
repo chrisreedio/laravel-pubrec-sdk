@@ -7,17 +7,15 @@ use ChrisReedIO\PubRecSDK\Data\PropertyData;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Str;
 use JsonException;
-use Override;
 use Saloon\CachePlugin\Contracts\Cacheable;
 use Saloon\CachePlugin\Contracts\Driver;
 use Saloon\CachePlugin\Drivers\LaravelCacheDriver;
-use Saloon\CachePlugin\Helpers\CacheKeyHelper;
 use Saloon\CachePlugin\Traits\HasCaching;
 use Saloon\Http\PendingRequest;
 use Saloon\Http\Response;
+
 use function collect;
 use function config;
-use function dd;
 
 class GetPropertyDetails extends BaseRequest implements Cacheable
 {
@@ -25,8 +23,7 @@ class GetPropertyDetails extends BaseRequest implements Cacheable
 
     public function __construct(
         protected AddressData $address
-    )
-    {
+    ) {
     }
 
     public function resolveEndpoint(): string
@@ -56,11 +53,11 @@ class GetPropertyDetails extends BaseRequest implements Cacheable
     protected function cacheKey(PendingRequest $pendingRequest): ?string
     {
         $uri = $pendingRequest->getUri();
-        $key = $uri->getScheme() . '://' . $uri->getHost() . $uri->getPath();
+        $key = $uri->getScheme().'://'.$uri->getHost().$uri->getPath();
         $query = collect($pendingRequest->query()->all())
             ->forget('OrderId')
             ->all();
-        $key .= '?' . http_build_query($query);
+        $key .= '?'.http_build_query($query);
 
         return $key;
     }
