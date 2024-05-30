@@ -6,6 +6,7 @@ use ChrisReedIO\PubRecSDK\Data\AddressData;
 use ChrisReedIO\PubRecSDK\Data\PropertyData;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Str;
+use JsonException;
 use Override;
 use Saloon\CachePlugin\Contracts\Cacheable;
 use Saloon\CachePlugin\Contracts\Driver;
@@ -44,9 +45,11 @@ class GetPropertyDetails extends BaseRequest implements Cacheable
         ]);
     }
 
+    /**
+     * @throws JsonException
+     */
     public function createDtoFromResponse(Response $response): PropertyData
     {
-        dd($response->json());
         return PropertyData::fromArray($response->json('Data.Listing'));
     }
 

@@ -16,17 +16,16 @@ class Properties extends BaseResource
      * @throws RequestException
      * @throws Exception
      */
-    public function details(AddressData $address): array // ?PropertyData
+    public function details(AddressData $address): ?PropertyData
     {
         $response = $this->connector->send(new GetPropertyDetails($address));
-        // dd($response->isCached());
         if ($response->failed()) {
             // TODO: Handle this better
             throw new Exception($response->body(), $response->status());
         }
 
-        // return $response->dtoOrFail();
-        return $response->json('Data.Listing');
+        return $response->dtoOrFail();
+        // return $response->json('Data.Listing');
     }
 
 }

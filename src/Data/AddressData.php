@@ -16,7 +16,7 @@ readonly class AddressData extends BaseData
 
     public static function fromArray(array $data): static
     {
-        return new static(
+        return new self(
             street: $data['StreetAddress'] ?? null,
             city: $data['City'] ?? null,
             state: $data['State'] ?? null,
